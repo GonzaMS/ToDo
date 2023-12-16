@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
+  background-color: #D4F1F4;
   margin: 0;
   padding: 0;
   display: flex;
@@ -92,4 +92,9 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+
+li button {
+  margin-left: 10px;
+  cursor: pointer;
 }
