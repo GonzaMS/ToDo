@@ -28,7 +28,7 @@ li button {
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
+    background: linear-gradient(to bottom, #68EACC 0%, #497BE8 100%);
     margin: 0;
     padding: 0;
     flex-direction: column;
