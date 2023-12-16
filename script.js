@@ -32,6 +32,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const lista = document.querySelector(`#${estado}`);
       lista.appendChild(li);
 
+      // Agrega un boton de eliminar
+      const btnEliminar = document.createElement("button");
+      btnEliminar.textContent = "Eliminar";
+      li.appendChild(btnEliminar);
+
       // Agrega eventos para cambiar el estado de la tarea
       li.addEventListener("click", () => {
         const estados = ["pendiente", "en-progreso", "hecho"];
@@ -41,15 +46,20 @@ document.addEventListener("DOMContentLoaded", function () {
         guardarTareasEnLocalStorage(tareas);
         actualizarVista(tareas);
       });
+
+      // Agrega evento para eliminar la tarea
+      btnEliminar.addEventListener("click", () => {
+        tareas.splice(index, 1);
+        guardarTareasEnLocalStorage(tareas);
+        actualizarVista(tareas);
+      });
     });
   }
 
   // Agrega una tarea a la lista
   function agregarTarea() {
     const descripcion = descripcionInput.value;
-    console.log(descripcion);
     const asignadoA = asignadoAInput.value;
-    console.log(asignadoA);
     const fecha = fechaInput.value;
 
     if (descripcion && asignadoA && fecha) {
