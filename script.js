@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
           break;
         default:
           // Si no hay etiqueta, se usa el estilo predeterminado
-          li.textContent = `${tarea.descripcion} (Asignado a: ${tarea.asignadoA}, Fecha: ${tarea.fecha})`;
+          li.textContent = `${tarea.descripcion} (Descripcion: ${tarea.asignadoA}, Fecha: ${tarea.fecha})`;
       }
 
       const lista = document.querySelector(`#${estado}`);
