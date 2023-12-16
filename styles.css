@@ -1,47 +1,66 @@
-/* Estilos generales */
+#agregar-tarea-container,
+.task-column {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    padding: 20px;
+    transition: box-shadow .3s
+}
+
+#agregar-tarea-container h2,
+.task-column h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #555
+}
+
+#tasks,
+body {
+    display: flex
+}
+
+.task-list li,
+button,
+li button {
+    transition: background-color .3s;
+    cursor: pointer
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 100vh
 }
 
-/* Encabezado */
 h1 {
     font-size: 2em;
     margin-bottom: 20px;
-    color: #333;
+    color: #333
 }
 
-/* Contenedor de tareas */
+button,
+label {
+    font-size: 1em
+}
+
 #tasks {
-    display: flex;
     justify-content: space-around;
     width: 100%;
-    margin: 20px 0;
+    margin: 20px 0
 }
 
 .task-column {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
     flex: 1;
-    margin: 0 10px;
-    height: 35vh;
-    transition: box-shadow 0.3s ease;
+    margin: 0 10px
 }
 
 .task-column h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #555;
-    text-align: center;
+    text-align: center
 }
 
 .task-list {
@@ -49,114 +68,99 @@ h1 {
     padding: 0;
     max-height: 60vh;
     overflow-y: auto;
+    scrollbar-width: thin
 }
 
 .task-list li {
     background-color: #f9f9f9;
     padding: 15px;
     border-radius: 8px;
-    margin: 10px 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin: 10px 0
 }
 
 .task-list li:hover {
-    background-color: #eaeaea;
+    background-color: #eaeaea
 }
 
-/* Contenedor para agregar tarea */
 #agregar-tarea-container {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
     margin: 20px 0;
     max-width: 500px;
-    width: 80%;
-    transition: box-shadow 0.3s ease;
+    width: 80%
 }
 
-#agregar-tarea-container h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #555;
-}
-
-input[type="text"],
-input[type="date"] {
+input[type=date],
+input[type=text],
+select {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
-button,
-li button {
-    font-size: 1em;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.contenedor-etiquetas-tarea {
+    display: flex;
+    justify-content: space-between
 }
 
 button {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     background-color: #3498db;
-    color: white;
+    color: #fff;
     border: none;
     padding: 15px 20px;
-    cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    margin-top: 20px
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #2980b9
 }
 
 li button {
     margin-left: 10px;
-    cursor: pointer;
     background-color: #e74c3c;
-    color: white;
+    color: #fff;
     border: none;
     padding: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 5px
 }
 
 li button:hover {
     background-color: #c0392b;
-    cursor: pointer;
+    cursor: pointer
 }
 
-/* Estilo para la barra de desplazamiento en la lista de tareas */
-.task-list {
-    scrollbar-width: thin;
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555
 }
 
 .task-list::-webkit-scrollbar {
-    width: 8px;
+    width: 8px
 }
 
 .task-list::-webkit-scrollbar-thumb {
     background-color: #ccc;
-    border-radius: 4px;
+    border-radius: 4px
 }
 
 .task-list::-webkit-scrollbar-track {
-    background-color: #f5f5f5;
+    background-color: #f5f5f5
 }
 
-/* Ajustes en la altura de las columnas para que ocupen el 100% de la pantalla en dispositivos pequeños */
-@media (max-width: 768px) {
+@media (max-width:768px) {
     .task-column {
         height: auto;
-        margin-bottom: 20px;
+        margin-bottom: 20px
     }
 
     #agregar-tarea-container {
         width: 100%;
-        max-width: none;
+        max-width: none
     }
 }
